@@ -1,0 +1,9 @@
+﻿  InvestmentAccount.cpp
+C:\Users\james\Desktop\Project 2\Project 2\InvestmentAccount.cpp(133,6): warning C4101: 'i': unreferenced local variable
+C:\Users\james\Desktop\Project 2\Project 2\InvestmentAccount.cpp(160,6): warning C4101: 'i': unreferenced local variable
+C:\Users\james\Desktop\Project 2\Project 2\InvestmentAccount.cpp(192,28): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+C:\Users\james\Desktop\Project 2\Project 2\InvestmentAccount.cpp(192,23): warning C4244: 'initializing': conversion from 'double' to 'const int', possible loss of data
+  Project 2.cpp
+  Generating Code...
+  LINK : C:\Users\james\Desktop\Project 2\x64\Debug\Project 2.exe not found or not built by the last incremental link; performing full link
+  Project 2.vcxproj -> C:\Users\james\Desktop\Project 2\x64\Debug\Project 2.exe
