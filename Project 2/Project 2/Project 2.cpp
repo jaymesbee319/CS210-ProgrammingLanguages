@@ -172,6 +172,8 @@ int menuChoice(double amount, double deposit, double interest, int years)
 }
 
 void updateInvestmentAccount(double amount, double deposit, double interest, int years) {
+
+    //function to intake new inputs from the user via footer menu, update account variables, and ouput an updated table.
     double initialAmount = amount;
     double annualInterest = interest;
     double monthlyDeposit = deposit;
