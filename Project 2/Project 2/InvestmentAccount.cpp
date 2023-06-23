@@ -8,6 +8,8 @@ using namespace std;
 InvestmentAccount::InvestmentAccount() 
 {
 	//default constructor for InvestmentAccount
+	//@param Value - none
+	//@returns - none
 	
 	this -> initialAmount = 0;
 	this -> annualInterestRate = 0;
@@ -17,6 +19,9 @@ InvestmentAccount::InvestmentAccount()
 InvestmentAccount::InvestmentAccount(double amount, double interestRate, int years)
 {
 	//main constructor for InvestmentAccount with proper parameters, without monthly deposit
+	//@param Value - amount, interestRate, years
+	//@returns - none
+	
 	
 	this -> initialAmount = amount;
 	this -> annualInterestRate = interestRate;
@@ -28,6 +33,9 @@ InvestmentAccount::InvestmentAccount(double amount, double interestRate, int yea
 InvestmentAccount::InvestmentAccount(double amount, double interestRate, double deposit, int years)
 {
 	//main constructor for InvestmentAccount with proper parameters, with monthly deposit
+	//@param Value - interestRate, deposit, years
+	//@returns - none
+	
 	
 	this -> initialAmount = amount;
 	this -> annualInterestRate = interestRate;
@@ -39,6 +47,8 @@ InvestmentAccount::InvestmentAccount(double amount, double interestRate, double 
 double InvestmentAccount::getEndingBalance(int numberOfYears)
 {
 	//function to calculate and return the ending balance for each year for numberOfYears
+	//@param Value - numberofYears
+	//@returns - endingBalance
 	
 	double endingBalance = getInitialAmount();
 	double monthlyInterest = getAnnualInterestRate() / 100 /12;
@@ -61,6 +71,9 @@ double InvestmentAccount::getEndingBalance(int numberOfYears)
 double InvestmentAccount::getInterestEarned(int numberOfYears)
 {
 	//function to calculate and return annualized InterestEarned for numberOfYears
+	//@param Value - numberOfYears
+	//@returns - interestEarned
+	
 	
 	double interestEarned = 0;
 	double endingBalance = getInitialAmount();
@@ -82,6 +95,8 @@ double InvestmentAccount::getInterestEarned(int numberOfYears)
 std::string InvestmentAccount::getEndingBalanceFormatted(int numberOfYears)
 {
 	//returns formatted and rounded balance for output of EndingBalance
+	//@param Value - numberOfYears
+	//@returns - formatted endingBalance
 	
 	int years = numberOfYears;
 	return std::string("$" + format(round(getEndingBalance(years), 2)));
@@ -90,6 +105,9 @@ std::string InvestmentAccount::getEndingBalanceFormatted(int numberOfYears)
 std::string InvestmentAccount::getInterestEarnedFormatted(int numberOfYears)
 {
 	//returns formated and rounded balance for output of InterestEarned
+	//@param Value - numberOfYears
+	//@returns - formatted InterestEarned
+	
 	int years = numberOfYears;
 	return std::string("$" + format(round(getInterestEarned(years), 2)));
 }
@@ -97,6 +115,8 @@ std::string InvestmentAccount::getInterestEarnedFormatted(int numberOfYears)
 double InvestmentAccount::getInitialAmount()
 {
 	//returns the user entered initialAmount
+	//@param Value - none
+	//@returns - initialAmount
 	
 	return initialAmount;
 }
@@ -104,6 +124,8 @@ double InvestmentAccount::getInitialAmount()
 double InvestmentAccount::getMonthlyDeposit()
 {
 	//returns the user entered monthlyDeposit
+	//@param Value - none
+	//@returns - monthlyDeposit
 	
 	return monthlyDeposit;
 }
@@ -111,6 +133,8 @@ double InvestmentAccount::getMonthlyDeposit()
 double InvestmentAccount::getAnnualInterestRate()
 {
 	//returns the user entered annualInterestRate
+	//@param Value - none
+	//@returns - annualInterestRAte
 	
 	return annualInterestRate;
 }
@@ -118,6 +142,8 @@ double InvestmentAccount::getAnnualInterestRate()
 int InvestmentAccount::getNumberOfYears()
 {
 	//returns the user entered numberOfYears
+	//@param Value - none
+	//@returns - numberOfYears
 	
 	return numberOfYears;
 }
@@ -125,6 +151,8 @@ int InvestmentAccount::getNumberOfYears()
 void InvestmentAccount::setInitialAmount(double amount)
 {
 	//sets a new user entered initialAmount
+	//@param Value - amount
+	//@returns - none
 	
 	double initalAmount = amount;
 }
@@ -132,6 +160,8 @@ void InvestmentAccount::setInitialAmount(double amount)
 void InvestmentAccount::setMonthlyDeposit(double deposit)
 {
 	//sets a new user entered monthlyDeposit
+	//@param Value - deposit
+	//@returns - none
 	
 	double monthlyDeposit = deposit;
 }
@@ -139,6 +169,8 @@ void InvestmentAccount::setMonthlyDeposit(double deposit)
 void InvestmentAccount::setAnnualInterestRate(double interest)
 {
 	//sets a new user entered annualInterestRate
+	//@param Value - interest
+	//@returns - none
 	
 	double annualInterestRate = interest;
 }
@@ -146,6 +178,8 @@ void InvestmentAccount::setAnnualInterestRate(double interest)
 void InvestmentAccount::setNumberOfYears(int years)
 {
 	////sets a new user entered numberOfYears
+	//@param Value - years
+	//@returns - none
 	
 	int numberOfYears = years;
 }
@@ -153,6 +187,8 @@ void InvestmentAccount::setNumberOfYears(int years)
 template<typename T> void InvestmentAccount::printElement(T t, const int& t_width) {
 
 	//formats the output into tabular format for ease of viewing
+	//@param Value - inputs from print functions
+	//@returns - none
 	
 	const char separator = ' ';
 	cout << left << setw(t_width) << setfill(separator) << t;
@@ -161,6 +197,8 @@ template<typename T> void InvestmentAccount::printElement(T t, const int& t_widt
 void InvestmentAccount::printWithoutMonthlyDeposit()
 {
 	//function to set headers and output table for user account totals WITHOUT monthlyDeposit
+	//@param Value - none
+	//@returns - none
 	
 	int i;
 	const int numWidth = 30;
@@ -190,6 +228,8 @@ void InvestmentAccount::printWithMonthlyDeposit()
 {
 	
 	//function to set headers and output table for user account totals WITH monthlyDeposit
+	//@param Value - none
+	//@returns - none
 	
 	int i;
 	const int numWidth = 30;
