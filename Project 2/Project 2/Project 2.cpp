@@ -74,6 +74,9 @@ int main()
 }
 void printFullOutput(InvestmentAccount newAccountWith, InvestmentAccount newAccountWithout) {
     //prints full output for investment accounts with and without monthly investments
+    //@param Value - InvestmentAccount objects with and without monghtlyDeposit
+	//@returns - none
+	
 
     newAccountWith.printWithMonthlyDeposit();
 
@@ -88,12 +91,18 @@ void printFullOutput(InvestmentAccount newAccountWith, InvestmentAccount newAcco
 
 void pressAnyKeyToContinue() {
     //waits for user to press a key to continue to next step
+    //@param Value - none
+	//@returns - none
+	
     cout << "Press Enter to Continue";
     cin.ignore(std::numeric_limits<streamsize>::max(), '\n');
 }
 
 void displayMenu() {
     //displays menu for user to update values
+    //@param Value - none
+	//@returns - none
+	
     cout << "1. Change Initial Investment  ";
     cout << "2. Change Monthly Deposit  ";
     cout << "3. Change Annual Interest  ";
@@ -102,9 +111,11 @@ void displayMenu() {
 }
 int menuChoice(double amount, double deposit, double interest, int years)
 {
-    string confirm;
     //updates the values for the user based on menu choice
-
+    //@param Value - inputs from user
+	//@returns - 0 when user chooses to exit
+	
+    string confirm;
     int userChoice;
     double initialAmount = amount;
     double monthlyDeposit = deposit;
@@ -174,6 +185,9 @@ int menuChoice(double amount, double deposit, double interest, int years)
 void updateInvestmentAccount(double amount, double deposit, double interest, int years) {
 
     //function to intake new inputs from the user via footer menu, update account variables, and ouput an updated table.
+    //@param Value - amount, deposit, interest, and years when user chooses to update account settings
+	//@returns - none
+	
     double initialAmount = amount;
     double annualInterest = interest;
     double monthlyDeposit = deposit;
