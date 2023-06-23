@@ -7,6 +7,8 @@ using namespace std;
 //Implementation for InvestmentAccount
 InvestmentAccount::InvestmentAccount() 
 {
+	//default constructor for InvestmentAccount
+	
 	this -> initialAmount = 0;
 	this -> annualInterestRate = 0;
 	this -> monthlyDeposit = 0;
@@ -14,6 +16,8 @@ InvestmentAccount::InvestmentAccount()
 }
 InvestmentAccount::InvestmentAccount(double amount, double interestRate, int years)
 {
+	//main constructor for InvestmentAccount with proper parameters, without monthly deposit
+	
 	this -> initialAmount = amount;
 	this -> annualInterestRate = interestRate;
 	this -> numberOfYears = years;
@@ -23,6 +27,8 @@ InvestmentAccount::InvestmentAccount(double amount, double interestRate, int yea
 
 InvestmentAccount::InvestmentAccount(double amount, double interestRate, double deposit, int years)
 {
+	//main constructor for InvestmentAccount with proper parameters, with monthly deposit
+	
 	this -> initialAmount = amount;
 	this -> annualInterestRate = interestRate;
 	this -> monthlyDeposit = deposit;
@@ -32,6 +38,8 @@ InvestmentAccount::InvestmentAccount(double amount, double interestRate, double 
 
 double InvestmentAccount::getEndingBalance(int numberOfYears)
 {
+	//function to calculate and return the ending balance for each year for numberOfYears
+	
 	double endingBalance = getInitialAmount();
 	double monthlyInterest = getAnnualInterestRate() / 100 /12;
 	double totalMonthlyDeposits = getMonthlyDeposit();
@@ -52,6 +60,8 @@ double InvestmentAccount::getEndingBalance(int numberOfYears)
 
 double InvestmentAccount::getInterestEarned(int numberOfYears)
 {
+	//function to calculate and return annualized InterestEarned for numberOfYears
+	
 	double interestEarned = 0;
 	double endingBalance = getInitialAmount();
 	int i;
@@ -71,65 +81,87 @@ double InvestmentAccount::getInterestEarned(int numberOfYears)
 
 std::string InvestmentAccount::getEndingBalanceFormatted(int numberOfYears)
 {
-	//returns formatted and rounded balance for output
+	//returns formatted and rounded balance for output of EndingBalance
+	
 	int years = numberOfYears;
-	//format(round(getEndingBalance(years), 2));
 	return std::string("$" + format(round(getEndingBalance(years), 2)));
 }
 
 std::string InvestmentAccount::getInterestEarnedFormatted(int numberOfYears)
 {
+	//returns formated and rounded balance for output of InterestEarned
 	int years = numberOfYears;
 	return std::string("$" + format(round(getInterestEarned(years), 2)));
 }
 
 double InvestmentAccount::getInitialAmount()
 {
+	//returns the user entered initialAmount
+	
 	return initialAmount;
 }
 
 double InvestmentAccount::getMonthlyDeposit()
 {
+	//returns the user entered monthlyDeposit
+	
 	return monthlyDeposit;
 }
 
 double InvestmentAccount::getAnnualInterestRate()
 {
+	//returns the user entered annualInterestRate
+	
 	return annualInterestRate;
 }
 
 int InvestmentAccount::getNumberOfYears()
 {
+	//returns the user entered numberOfYears
+	
 	return numberOfYears;
 }
 
 void InvestmentAccount::setInitialAmount(double amount)
 {
+	//sets a new user entered initialAmount
+	
 	double initalAmount = amount;
 }
 
 void InvestmentAccount::setMonthlyDeposit(double deposit)
 {
+	//sets a new user entered monthlyDeposit
+	
 	double monthlyDeposit = deposit;
 }
 
 void InvestmentAccount::setAnnualInterestRate(double interest)
 {
+	//sets a new user entered annualInterestRate
+	
 	double annualInterestRate = interest;
 }
 
 void InvestmentAccount::setNumberOfYears(int years)
 {
+	////sets a new user entered numberOfYears
+	
 	int numberOfYears = years;
 }
 
 template<typename T> void InvestmentAccount::printElement(T t, const int& t_width) {
+
+	//formats the output into tabular format for ease of viewing
+	
 	const char separator = ' ';
 	cout << left << setw(t_width) << setfill(separator) << t;
 }
 
 void InvestmentAccount::printWithoutMonthlyDeposit()
 {
+	//function to set headers and output table for user account totals WITHOUT monthlyDeposit
+	
 	int i;
 	const int numWidth = 30;
 	const int titleWidth = 25;
@@ -156,7 +188,9 @@ void InvestmentAccount::printWithoutMonthlyDeposit()
 
 void InvestmentAccount::printWithMonthlyDeposit()
 {
-
+	
+	//function to set headers and output table for user account totals WITH monthlyDeposit
+	
 	int i;
 	const int numWidth = 30;
 	const int titleWidth = 25;
